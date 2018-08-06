@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CMDB login</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="../assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="../assets/css/cmdb.css">
+    <link rel="stylesheet" href="../assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body>
+  <div class="myapp-enrolment">
+      <div class="myapp-enrolment-block">
+          <div class="myapp-enrolment-logo">
+              <div class="myapp-enrolment-logo-text">
+                  <div class="myapp-enrolment-logo-text">
+                      CMDB <span> System</span> <i class="am-icon-skyatlas"></i>
+                  </div>
+              </div>
+          </div>
+          <div class="myapp-enrolment-form">
+              <form class="am-form am-form-horizontal">
+                  <div class="myapp-enrolment-form-grop am-form-group am-form-icon am-form-feedback">
+                      <label for="doc-ipt-3-a" class="am-u-sm-3 am-form-label">用户名：</label>
+{#                    <div class="am-u-sm-9 am-form-success">#}
+                      <div class="am-u-sm-9">
+                          <input type="text" id="doc-ipt-3-a" class="am-form-field" placeholder="请输入你的名字" onblur="checkusername(this)" name="add_user_name" >
+                          <span></span>
+                      </div>
+                  </div>
+                  <div class="myapp-enrolment-form-grop am-form-group am-form-icon am-form-feedback">
+                      <label for="doc-ipt-3-a" class="am-u-sm-3 am-form-label">用户密码：</label>
+                      <div class="am-u-sm-9">
+                          <input type="password" id="doc-ipt-3-a" class="am-form-field" placeholder="请设置登录密码" name="add_user_pwd" onblur="checkuserpwd()" >
+                          <span></span>
+                      </div>
+                  </div>
+                  <div class="myapp-enrolment-form-grop am-form-group am-form-icon am-form-feedback">
+                      <label for="doc-ipt-3-a" class="am-u-sm-3 am-form-label">确认密码：</label>
+                      <div class="am-u-sm-9">
+                          <input type="password" id="doc-ipt-3-a" class="am-form-field" placeholder="请重复输入之前设置的密码" name="add_user_pwd_check" onblur="checkuserpwd()">
+                          <span></span>
+                      </div>
+                  </div>
+                  <div class="myapp-enrolment-form-grop am-form-group am-form-icon am-form-feedback">
+                      <label for="doc-ipt-3-a" class="am-u-sm-3 am-form-label">电子邮箱：</label>
+                      <div class="am-u-sm-9">
+                          <input type="email" id="doc-ipt-3-a" class="am-form-field" placeholder="请输入你的电子邮箱" name="add_user_email" onblur="checkemail()">
+                          <span></span>
+                      </div>
+                  </div>
+                  <div class="myapp-enrolment-form-grop am-form-group  am-form-icon am-form-feedback">
+                      <label for="doc-ipt-3-a" class="am-u-sm-3 am-form-label">联系电话：</label>
+                      <div class="am-u-sm-9">
+                          <input type="text" id="doc-ipt-3-a" class="am-form-field" placeholder="请输入你的联系电话" name="add_user_phone" onblur="checkphone()">
+                          <span></span>
+                      </div>
+                  </div>
+                  <button type="button" class="am-btn am-btn-primary am-u-sm-3 " onclick="add_user_submit()">注册</button>
+                  <button type="submit" class="am-btn am-btn-success am-u-sm-3 " formaction="/">取消</button>
+              </form>
+          </div>
+      </div>
+  </div>
+{#   提交成功提示#}
+  <div class="am-modal am-modal-alert" tabindex="-1" id="add_user_aleat_success">
+      <div class="am-modal-dialog">
+{#          <div class="am-modal-hd">System Info</div>#}
+          <div class="am-modal-bd">注册成功</div>
+{#          <div class="am-modal-footer">#}
+{#              <span class="am-modal-btn" onclick="">确定</span>#}
+{#          </div>#}
+      </div>
+  </div>
+{#    错误提示#}
+  <div class="am-modal am-modal-alert" tabindex="-1" id="add_user_aleat_error">
+      <div class="am-modal-dialog">
+          <div class="am-modal-hd">System Info</div>
+          <div class="am-modal-bd">请修改填写错误项</div>
+          <div class="am-modal-footer">
+              <span class="am-modal-btn">确定</span>
+          </div>
+      </div>
+  </div>
+
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/cmdb.js"></script>
+</body>
+</html>

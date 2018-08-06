@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin index Examples</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="../assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="../assets/css/cmdb.css">
+    <link rel="stylesheet" href="../assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body data-type="generalComponents">
+
+    <header class="am-topbar am-topbar-inverse admin-header">
+        <div class="am-topbar-brand">
+            <a href="javascript:;" class="tpl-logo">
+                <img src="../assets/img/logo.png" alt="">
+            </a>
+        </div>
+        <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
+        </div>
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+        <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+            <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
+                <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen" class="tpl-header-list-link"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+                <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                    <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
+                        <span class="tpl-header-list-user-nick">{{ data.UserName }}</span><span class="tpl-header-list-user-ico"> <img src="../assets/img/user01.png"></span>
+                    </a>
+                    <ul class="am-dropdown-content">
+                        <li><span class="am-icon-power-off" onclick="logout()"></span> 退出</li>
+                    </ul>
+                    <div class="am-modal am-modal-alert" tabindex="-1" id="">
+                        <div class="am-modal-dialog">
+                             <div class="am-modal-hd">成功登出</div>
+                        </div>
+                    </div>
+                </li>
+                <li><a class="tpl-header-list-link" onclick="logout()"><span class="am-icon-sign-out tpl-header-list-ico-out-size"></span></a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="tpl-page-container tpl-page-header-fixed">
+        <div class="tpl-left-nav tpl-left-nav-hover">
+            <div class="tpl-left-nav-title">
+                系统菜单
+            </div>
+            <div class="tpl-left-nav-list">
+                <ul class="tpl-left-nav-menu">
+                    <script>var restr='{{ data.system_memu }}';</script>
+                    <div class="system_memu"></div>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tpl-content-wrapper">
+            <div class="tpl-content-page-title">
+                CMDB 项目信息变更
+            </div>
+            <ol class="am-breadcrumb">
+                <li><a href="/user/index" class="am-icon-home">首页</a></li>
+                {% for info in data.navigation %}
+                    <li class="am-active">{{ info }}</li>
+                {% endfor %}
+            </ol>
+           <div class="tpl-portlet-components">
+                <div class="tpl-block">
+<!--                     <div class="am-g">
+                        <div class="am-u-sm-12 am-u-md-6">
+                            <div class="am-btn-toolbar">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button type="button" class="am-btn am-btn-default am-btn-success" id="doc-prompt-toggle"><span class="am-icon-plus"></span> 新增</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-u-sm-12 am-u-md-3">
+                            <div class="am-input-group am-input-group-sm">
+                                <input type="text" class="am-form-field">
+                                <span class="am-input-group-btn">
+                                    <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" type="button"></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div> -->
+<!--                     <div class="am-g">
+                        <div class="am-u-sm-12">
+                            <form class="am-form">
+                                <div class="am-scrollable-horizontal am-text-nowrap">
+                                <table class="am-table am-table-striped am-table-hover table-main">
+                                    <thead>
+                                        <tr>
+                                            <th>项目编号</th>
+                                            <th>项目名称</th>
+                                            <th>项目所属部门</th>
+                                            <th>项目负责人</th>
+                                            <th>项目描述</th>
+                                            <th class="table-set">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="am-table-centered am-table-striped">
+                                    {% for msg in data.Tablemsg.tr %}
+                                        <tr>
+                                            <td>{{ msg.ProjectUID }}</td>
+                                            <td>{{ msg.ProjectName }}</td>
+                                            <td>{{ msg.ProjectFrom }}</td>
+                                            <td>{{ msg.ProjectUser }}</td>
+                                            <td>{{ msg.ProjectMsg }}</td>
+                                            <td>
+                                                <div class="am-btn-toolbar">
+                                                    <div class="am-btn-group am-btn-group-xs">
+                                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary" onclick="GoToProjectUpdate({{ msg.ProjectId }})"><span class="am-icon-pencil-square-o" ></span>编辑</button>
+                                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o" ></span> 删除</button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                                </div>
+                                <div class="am-cf">
+                                    <div class="am-fr">
+                                        <ul class="am-pagination tpl-pagination">
+                                            <li class="am-disabled"><a href="#">«</a></li>
+                                            <li class="am-active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li><a href="#">»</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <hr>
+
+                            </form>
+                        </div>
+
+                    </div> -->
+                    <div class="portlet-title">
+                        <div class="caption font-green bold">
+                            <!-- <span class="am-icon-code"></span> --> 项目信息
+                        </div>
+<!--                         <div class="tpl-portlet-input tpl-fz-ml">
+                            <div class="portlet-input input-small input-inline">
+                                <div class="input-icon right">
+                                    <i class="am-icon-search"></i>
+                                    <input type="text" class="form-control form-control-solid" placeholder="搜索...">
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+
+                </div>
+                <!-- <div class="tpl-alert"></div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="am-modal am-modal-alert" tabindex="-1" id="add_user_aleat_success">
+      <div class="am-modal-dialog">
+          <div class="am-modal-bd">添加成功</div>
+      </div>
+    </div>
+      <div class="am-modal am-modal-alert" tabindex="-1" id="add_Project_error">
+          <div class="am-modal-dialog">
+              <div class="am-modal-hd">System Info</div>
+              <div class="am-modal-bd">请修改填写错误项</div>
+              <div class="am-modal-footer">
+                  <span class="am-modal-btn">确定</span>
+              </div>
+          </div>
+      </div>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/amazeui.min.js"></script>
+    <script src="/assets/js/system_memu.js"></script>
+    <script >show_Memu(restr)</script>
+    <script src="/assets/js/app.js"></script>
+    <script src="../assets/js/cmdb.js"></script>
+    <script src="../assets/js/project.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CMDB login</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="../assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css" />
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+
+<body data-type="login">
+
+  <div class="am-g myapp-login">
+	<div class="myapp-login-logo-block  tpl-login-max">
+		<div class="myapp-login-logo-text">
+			<div class="myapp-login-logo-text">
+				CMDB <span> System</span> <i class="am-icon-skyatlas"></i>
+			</div>
+		</div>
+
+		<div class="login-font">
+            <i>登录</i> or <span> <a href="/user/enrolment">注册</a></span>
+		</div>
+		<div class="am-u-sm-10 login-am-center">
+			<form class="am-form">
+				<fieldset>
+					<div class="am-form-group">
+						<input type="text" class="" id="doc-vld-name-2" required="required" name="login_username" placeholder="请输入用户名/电子邮件地址/手机号">
+					</div>
+					<div class="am-form-group">
+						<input type="password" class="" required="required" id="doc-ipt-pwd-1" name="login_userpwd" placeholder="请输入密码">
+					</div>
+					<p><button type="button" class="am-btn am-btn-default am-btn-primary" onclick="login(this)" >登录</button></p>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="am-modal am-modal-alert" tabindex="-1" id="user_login_success">
+    <div class="am-modal-dialog">
+         <div class="am-modal-hd">登录成功</div>
+{#            <div class="am-modal-bd">#}
+{#                登录成功#}
+{#            </div>#}
+{#            <div class="am-modal-footer">#}
+{#                <span class="am-modal-btn">确定</span>#}
+{#            </div>#}
+    </div>
+</div>
+
+<div class="am-modal am-modal-alert" tabindex="-1" id="user_login_error">
+    <div class="am-modal-dialog">
+         <div class="am-modal-hd">登录失败</div>
+            <div class="am-modal-bd">
+                请输入正确的用户名密码
+            </div>
+            <div class="am-modal-footer">
+                <span class="am-modal-btn">确定</span>
+            </div>
+    </div>
+</div>
+
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/jquery.md5.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/cmdb.js"></script>
+</body>
+
+</html>
