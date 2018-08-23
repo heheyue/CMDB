@@ -16,6 +16,7 @@ from modules.PublicModules.views import GenerateUID
 from modules.PublicModules.views import *
 from modules.DbModules.DbProjectAll import *
 
+#返回项目管理首页
 @CheckLogin
 def Index(request):
     system_memu_now=SysTem_MeMu.System_memua(request)
@@ -48,6 +49,7 @@ def Index(request):
     }
     return render(request,'project_index.html',msg )
 
+# 处理添加项目
 @CheckLogin
 def AddProject(request):
     msg={
@@ -74,6 +76,7 @@ def AddProject(request):
             msg['error_msg']=remsg['error_msg']
     return HttpResponse(json.dumps(msg))
 
+#添加项目之前唯一性检测
 @CheckLogin
 def ChechProject(request):
     system_memu_now = SysTem_MeMu.System_memua(request)
@@ -100,6 +103,7 @@ def ChechProject(request):
         msg['error_code'] = 1
     return HttpResponse(json.dumps(msg))
 
+#处理update请求和update get的信息
 @CheckLogin
 def UpdateProject(request):
     system_memu_now=SysTem_MeMu.System_memua(request)
@@ -109,31 +113,71 @@ def UpdateProject(request):
             'UserName':request.session.get('UserInfo')['username'],
             'system_memu': json.dumps(system_memu_now),
             'navigation': ['信息管理', '项目管理','项目信息变更'],
+            'ProjectInfo':'',
+            'UpCheck':False,
         },
         'error_msg': None,
     }
+    # 处理get带ID的请求
     if request.method == 'GET':
         ID=request.GET.get('ID')
-        print(ID)
-        print(PROJECTALL.SelectById(ID))
+        if ID != None:
+        # print(ID)
+        # print(PROJECTALL.SelectById(ID).id)
+            msg['data']['ProjectInfo']=PROJECTALL.SelectById(ID)
+        else:
+            pass
         return render(request,'project_update.html',msg)
+    #处理update请求(更新项目信息)
+    elif request.method == 'POST':
+        ID=request.POST.get('Update_Project_Id')
+        Update_Project_From=request.POST.get('Update_Project_From')
+        Update_Project_User=request.POST.get('Update_Project_User')
+        Updat_Project_Msg=request.POST.get('Updat_Project_Msg')
+        if ID and Update_Project_From and Update_Project_User and Updat_Project_Msg:
+            Project=PROJECTALL
+            UpCheck=Project.UpDateProgect(id=ID,UID='',From=Update_Project_From,User=Update_Project_User,Msg=Updat_Project_Msg )
+            if UpCheck['error_code'] == 0:
+                msg['data']['UpCheck'] = True
+            else:
+                msg['error_code']=2
+                msg['error_msg']=UpCheck.error_msg
+        else:
+            msg['error_code']=3
+            msg['error_msg']='必填项缺少'
+        return HttpResponse(json.dumps(msg))
     else:
         return render(request, 'project_update.html', msg)
+# 删除项目
+@CheckLogin
+def DeleatProject(request):
+    Project=PROJECTALL
+    msg = {
+        'error_code': 0,
+        'data': {
+            'DeleatBit':False,
+        },
+        'error_msg': None,
+    }
 
+    if request.method == 'POST':
+        if request.POST.get('DeleatId'):
+            # print(request.POST.get('DeleatId'))
+            CheckBit=Project.DeleatProject(id=request.POST.get('DeleatId'),UID='')
+            if CheckBit['error_code'] == 0:
+                msg['data']['DeleatBit']=True
+            else:
+                msg['error_code']=2
+                msg['error_msg']=CheckBit['error_msg']
+        else:
+            msg['error_code']=3
+            msg['error_msg']='参数为空'
+    else:
+        msg['error_code']=1
+    return HttpResponse(json.dumps(msg))
 
-# def SelectAllHost(request):
-#     msg={
-#         'error_code':0,
-#         'data':{
-#             'HostNum':0,
-#             'AllHost':{}
-#         },
-#         'error_msg':None
-#     }
-#     pass
-
-
-def Test(request):
-    UID=GenerateUID()
-    print(UID)
-    return HttpResponse(UID)
+# 测试通道
+# def Test(request):
+#     UID=GenerateUID()
+#     print(UID)
+#     return HttpResponse(UID)
