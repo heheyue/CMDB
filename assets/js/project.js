@@ -211,3 +211,34 @@ function Return_ProjectIndex(rag) {
     // window.location.href(url);
     // alert('aaa')
 }
+
+// 删除确认
+function DeleatConfirm(arg){
+  $('#deleat_project_info'+arg).modal(open)
+}
+// 删除项目
+function Deleat_Project(arg){
+  // alert(arg);
+  $.ajax({
+        url:'/project/deleat',
+        type:'POST',
+        data:{
+            DeleatId:arg,
+        },
+        success:function (arg) {
+            var obj = jQuery.parseJSON(arg);
+            if (obj.data.DeleatBit == true){
+                // delete addcheckbit
+                $('#deleat_project').modal(open)
+                setTimeout(function(){window.location.href='/project/index'},1000);
+            }
+            else{
+              $('#deleat_project_error').modal(open)
+              console.log(obj.data.error_code)
+            }
+        },
+        error:function (arg) {
+             console.log(arg)
+        }
+    })
+}
