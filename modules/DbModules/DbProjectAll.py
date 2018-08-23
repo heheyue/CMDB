@@ -57,8 +57,8 @@ class PROJECTALL(object):
         return project_list
     #通过ID查询项目
     def SelectById(Id):
-        project_list = ProjectAll.objects.filter(id=Id)
-        print(project_list)
+        project_list = ProjectAll.objects.get(id=Id)
+        # print(project_list)
         return project_list
 
     #通过id或者ProjectID 更新项目

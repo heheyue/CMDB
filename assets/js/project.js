@@ -1,13 +1,14 @@
 /**
  * Created by root on 18-7-18.
  */
+// 检测全局标记
 window["addcheckbit"]={
     add_ProjectName_checkbit:false,
     add_ProjectFrom_checkbit:false,
     add_ProjectUser_checkbit:false,
     add_ProjectMsg_checkbit:false,
 }
-
+// 项目名唯一性检测
 function CheckProjectName() {
     var add_ProjectName=$("input[name='add_ProjectName']").val();
     // alert(add_ProjectName);
@@ -45,6 +46,7 @@ function CheckProjectName() {
         })
     }
 }
+// 检测项目所属部门不能为空
 function CheckProjectFrom() {
     var add_ProjectFrom=$("input[name='add_ProjectFrom']").val();
     // alert(add_ProjectFrom);
@@ -58,7 +60,7 @@ function CheckProjectFrom() {
         addcheckbit.add_ProjectFrom_checkbit=true;
     }
 }
-
+// 检测项目负责人不能为空
 function CheckProjectUser() {
     var add_ProjectUser=$("input[name='add_ProjectUser']").val();
     // alert(add_ProjectUser);
@@ -72,7 +74,7 @@ function CheckProjectUser() {
         addcheckbit.add_ProjectUser_checkbit=true;
     }
 }
-
+// 检测项目描述不能为空
 function CheckProjectMsg() {
     var add_ProjectMsg=$("textarea[name='add_ProjectMsg']").val();
     // alert(add_ProjectMsg);
@@ -86,7 +88,7 @@ function CheckProjectMsg() {
         addcheckbit.add_ProjectMsg_checkbit=true;
     }
 }
-
+// 项目添加提交
 $(function() {
   $('#doc-prompt-toggle').on('click', function() {
     $('#project_add').modal({
@@ -132,27 +134,80 @@ $(function() {
     });
   });
 });
-
+// 点击编辑跳转到编辑页面
 function GoToProjectUpdate(rag) {
     Tourl='/project/update?ID='+rag;
     setTimeout(function(){window.location.href=Tourl},0);
     // window.location.href(url);
     // alert('aaa')
 }
+// 编辑页面提交
+function SaveUpdate(arg){
+  // alert(arg);
+  var ID=arg;
+  var Update_ProjectFrom=$("input[name='Update_ProjectFrom']").val();
+  var Update_ProjectUser=$("input[name='Update_ProjectUser']").val();
+  var Update_ProjectMsg=$("textarea[name='Update_ProjectMsg']").val();
+  // alert(Update_ProjectFrom);
+  // alert(Update_ProjectUser);
+  // alert(Update_ProjectMsg);
+  if (Update_ProjectFrom.length == 0 ) {
+    // alert('asdasdas');
+    $("input[name='Update_ProjectFrom']").parent().attr("class",'am-u-sm-7 am-form-error');
+  }
+  else{
+    $("input[name='Update_ProjectFrom']").parent().attr("class",'am-u-sm-7');
+  }
+  if (Update_ProjectUser.length == 0 ) {
+    // alert('asdasdas');
+    $("input[name='Update_ProjectUser']").parent().attr("class",'am-u-sm-7 am-form-error');
+  }
+  else{
+    $("input[name='Update_ProjectUser']").parent().attr("class",'am-u-sm-7');
+  }
+  if (Update_ProjectMsg.length == 0 ) {
+    // alert('asdasdas');
+    $("textarea[name='Update_ProjectMsg']").parent().attr("class",'am-u-sm-7 am-form-error');
+  }
+  else{
+    $("textarea[name='Update_ProjectMsg']").parent().attr("class",'am-u-sm-7 ');
+  }
 
+  if ( ID && Update_ProjectFrom && Update_ProjectUser && Update_ProjectMsg) {
+    $.ajax({
+        url:'/project/update',
+        type:'POST',
+        data:{
+            Update_Project_Id:ID,
+            Update_Project_From:Update_ProjectFrom,
+            Update_Project_User:Update_ProjectUser,
+            Updat_Project_Msg:Update_ProjectMsg,
+        },
+        success:function (arg) {
+            var obj = jQuery.parseJSON(arg);
+            if (obj.data.UpCheck == true){
+                // delete addcheckbit
+                $('#Update_Success').modal(open)
+                setTimeout(function(){window.location.href='/project/index'},1000);
+            }
+            else{
+                console.log(obj.data.error_code)
+            }
+        },
+        error:function (arg) {
+             console.log(arg)
+        }
+    })
+  }
+  else{
+    $('#Update_Error').modal(open)
+  }
 
-
-// function standardPost (url,args) {
-//     // alert(url);
-//     // alert(args);
-//     var form = $("<form method='post'></form>");
-//     form.attr({"action": url});
-//     for (arg in args) {
-//         var input = $("<input type='hidden'>");
-//         input.attr({"ID": arg});
-//         input.val(args[arg]);
-//         form.append(input);
-//     }
-//     $("html").append(form);
-//     form.submit();
-// }
+}
+// 编辑页面取消跳转项目首页
+function Return_ProjectIndex(rag) {
+    // Tourl='/project/update?ID='+rag;
+    setTimeout(function(){window.location.href='/project/index'},0);
+    // window.location.href(url);
+    // alert('aaa')
+}
