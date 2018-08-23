@@ -60,7 +60,7 @@
                 </ul>
             </div>
         </div>
-
+        <!-- 中间正文部分  -->
         <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
                 CMDB 项目信息变更
@@ -71,83 +71,14 @@
                     <li class="am-active">{{ info }}</li>
                 {% endfor %}
             </ol>
+
            <div class="tpl-portlet-components">
                 <div class="tpl-block">
-<!--                     <div class="am-g">
-                        <div class="am-u-sm-12 am-u-md-6">
-                            <div class="am-btn-toolbar">
-                                <div class="am-btn-group am-btn-group-xs">
-                                    <button type="button" class="am-btn am-btn-default am-btn-success" id="doc-prompt-toggle"><span class="am-icon-plus"></span> 新增</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="am-u-sm-12 am-u-md-3">
-                            <div class="am-input-group am-input-group-sm">
-                                <input type="text" class="am-form-field">
-                                <span class="am-input-group-btn">
-                                    <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" type="button"></button>
-                                </span>
-                            </div>
-                        </div>
-                    </div> -->
-<!--                     <div class="am-g">
-                        <div class="am-u-sm-12">
-                            <form class="am-form">
-                                <div class="am-scrollable-horizontal am-text-nowrap">
-                                <table class="am-table am-table-striped am-table-hover table-main">
-                                    <thead>
-                                        <tr>
-                                            <th>项目编号</th>
-                                            <th>项目名称</th>
-                                            <th>项目所属部门</th>
-                                            <th>项目负责人</th>
-                                            <th>项目描述</th>
-                                            <th class="table-set">操作</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="am-table-centered am-table-striped">
-                                    {% for msg in data.Tablemsg.tr %}
-                                        <tr>
-                                            <td>{{ msg.ProjectUID }}</td>
-                                            <td>{{ msg.ProjectName }}</td>
-                                            <td>{{ msg.ProjectFrom }}</td>
-                                            <td>{{ msg.ProjectUser }}</td>
-                                            <td>{{ msg.ProjectMsg }}</td>
-                                            <td>
-                                                <div class="am-btn-toolbar">
-                                                    <div class="am-btn-group am-btn-group-xs">
-                                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary" onclick="GoToProjectUpdate({{ msg.ProjectId }})"><span class="am-icon-pencil-square-o" ></span>编辑</button>
-                                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o" ></span> 删除</button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    {% endfor %}
-                                </table>
-                                </div>
-                                <div class="am-cf">
-                                    <div class="am-fr">
-                                        <ul class="am-pagination tpl-pagination">
-                                            <li class="am-disabled"><a href="#">«</a></li>
-                                            <li class="am-active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li><a href="#">»</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <hr>
-
-                            </form>
-                        </div>
-
-                    </div> -->
                     <div class="portlet-title">
                         <div class="caption font-green bold">
                             <!-- <span class="am-icon-code"></span> --> 项目信息
                         </div>
+
 <!--                         <div class="tpl-portlet-input tpl-fz-ml">
                             <div class="portlet-input input-small input-inline">
                                 <div class="input-icon right">
@@ -157,10 +88,57 @@
                             </div>
                         </div> -->
                     </div>
-
-
                 </div>
-                <!-- <div class="tpl-alert"></div> -->
+                <div class="tpl-alert">
+                    <div class="am-g tpl-amazeui-form">
+                        <div class="am-u-sm-12 am-u-md-9">
+                            <form class="am-form am-form-horizontal">
+                                <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-3 am-form-label">项目编号</label>
+                                    <div class="am-u-sm-7" id="Project_Update" >
+                                        <input type="text" value="项目编号" disabled>
+                                        <!-- <small>输入你的名字，让我们记住你。</small> -->
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-3 am-form-label">项目名称</label>
+                                    <div class="am-u-sm-7" id="Project_Update" >
+                                        <input type="text" value="项目名称" disabled >
+                                        <!-- <small>输入你的名字，让我们记住你。</small> -->
+                                    </div>
+                                </div>
+                                 <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-3 am-form-label">项目所属部门</label>
+                                    <div class="am-u-sm-7" id="Project_Update" >
+                                        <input type="text" value="项目所属部门">
+                                        <!-- <small>输入你的名字，让我们记住你。</small> -->
+                                    </div>
+                                </div>
+                                 <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-3 am-form-label">项目负责人</label>
+                                    <div class="am-u-sm-7" id="Project_Update" >
+                                        <input type="text" value="项目负责人">
+                                        <!-- <small>输入你的名字，让我们记住你。</small> -->
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="user-intro" class="am-u-sm-3 am-form-label">项目描述</label>
+                                    <div class="am-u-sm-7" id="Project_Update">
+                                        <textarea class="" rows="5" id="user-intro" >项目描述</textarea>
+                                        <!-- <small>250字以内写出你的一生...</small> -->
+                                    </div>
+                                </div>
+
+                                <div class="am-form-group">
+                                    <div class="am-u-sm-9 am-u-sm-push-3">
+                                        <button type="button" class="am-btn am-btn-primary">保存</button>
+                                        <button type="button" class="am-btn am-btn-primary" style="margin-left:45%">取消</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -170,7 +148,7 @@
           <div class="am-modal-bd">添加成功</div>
       </div>
     </div>
-      <div class="am-modal am-modal-alert" tabindex="-1" id="add_Project_error">
+    <div class="am-modal am-modal-alert" tabindex="-1" id="add_Project_error">
           <div class="am-modal-dialog">
               <div class="am-modal-hd">System Info</div>
               <div class="am-modal-bd">请修改填写错误项</div>
@@ -178,14 +156,14 @@
                   <span class="am-modal-btn">确定</span>
               </div>
           </div>
-      </div>
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/amazeui.min.js"></script>
+    </div>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/amazeui.min.js"></script>
     <script src="/assets/js/system_memu.js"></script>
-    <script >show_Memu(restr)</script>
+    <script > show_Memu(restr) </script>
     <script src="/assets/js/app.js"></script>
-    <script src="../assets/js/cmdb.js"></script>
-    <script src="../assets/js/project.js"></script>
+    <script src="/assets/js/cmdb.js"></script>
+    <script src="/assets/js/project.js"></script>
 </body>
 
 </html>
