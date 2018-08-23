@@ -11,6 +11,8 @@ urlpatterns = [
     url(r'^chechprojectname',ChechProject),
     #更新项目信息
     url(r'^update',UpdateProject),
+    # 删除项目
+    url(r'^deleat',DeleatProject),
     #测试通道
-    url(r'^test',Test)
+    # url(r'^test',Test)
 ]
