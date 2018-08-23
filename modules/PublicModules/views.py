@@ -108,7 +108,7 @@ class SysTem_MeMu(object):
             # },
             {
                 'title': '信息管理',
-                'icon': 'am-icon-cubes',
+                'icon': 'am-icon-cloud',
                 'system_memu': [
                     {
                         'title': '主机管理',
@@ -126,6 +126,16 @@ class SysTem_MeMu(object):
                         #         'url':'/user/index'
                         #     }
                         # ],
+                    },
+                    {
+                        'title':'集群管理',
+                        'icon':'am-icon-cubes',
+                        'url': '/server/index',
+                    },
+                    {
+                        'title':'分类管理',
+                        'icon':'am-icon-bookmark',
+                        'url': '/server/index',
                     },
                     {
                         'title': '项目管理',
