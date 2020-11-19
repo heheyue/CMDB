@@ -89,9 +89,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'CMDB',
-        'USER': 'root',
-        'PASSWORD': '9288sTTQ',
-        'HOST': '172.16.160.107',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': ' ',
         'PORT': '3306',
         'OPTIONS':{
             'init_command':"SET sql_mode = 'STRICT_TRANS_TABLES'",
