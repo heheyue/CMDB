@@ -13,7 +13,7 @@ import random
 import hashlib
 from functools import wraps
 from CMDB import settings
-from django.shortcuts import render,render_to_response,redirect
+from django.shortcuts import render,redirect
 
 def index(request):
     #return HttpResponse('dasjkda')

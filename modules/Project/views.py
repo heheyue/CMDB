@@ -11,7 +11,7 @@ import random
 import hashlib
 from functools import wraps
 from CMDB import settings
-from django.shortcuts import render,render_to_response,redirect
+from django.shortcuts import render,redirect
 from modules.PublicModules.views import GenerateUID
 from modules.PublicModules.views import *
 from modules.DbModules.DbProjectAll import *

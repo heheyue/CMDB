@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dcca8485-90a7-4711-a34b-74219477a7d7" name="默认更改列表" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kUQxP0Mfz0jFx469FzK03oPpwG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager" selected="Django server.CMDB">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CMDB" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CMDB" type="Python.DjangoServer" factoryName="Django server">
+      <module name="CMDB" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="CMDB.settings" />
+      </envs>
+      <option name="SDK_HOME" value="C:\python\python3.8.2\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django server.CMDB" />
+      <item itemvalue="Python.manage" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.manage" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dcca8485-90a7-4711-a34b-74219477a7d7" name="默认更改列表" comment="" />
+      <created>1605752935058</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605752935058</updated>
+      <workItem from="1605752936253" duration="1542000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="116" y="194" width="1092" height="726" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605753296551">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="116" y="194" width="1092" height="726" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1605753296551" />
+    <state x="442" y="244" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1605753142731">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="442" y="244" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1605753142731" />
+    <state x="396" y="300" key="EnvironmentVariablesDialog" timestamp="1605753152857">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="396" y="300" key="EnvironmentVariablesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1605753152857" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1605754212040">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1605754212040" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1605754212040">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1605754212040" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1605754212040">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1605754212040" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1605754212040">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1605754212040" />
+    <state width="938" height="352" key="GridCell.Tab.1.bottom" timestamp="1605753316965">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="352" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1605753316965" />
+    <state width="938" height="352" key="GridCell.Tab.1.center" timestamp="1605753316965">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="352" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1605753316965" />
+    <state width="938" height="352" key="GridCell.Tab.1.left" timestamp="1605753316965">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="352" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1605753316965" />
+    <state width="938" height="352" key="GridCell.Tab.1.right" timestamp="1605753316965">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="352" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1605753316965" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CMDB$manage.coverage" NAME="manage Coverage Results" MODIFIED="1605753115300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

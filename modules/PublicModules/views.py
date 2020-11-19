@@ -13,7 +13,7 @@ import random
 import hashlib
 from functools import wraps
 from CMDB import settings
-from django.shortcuts import render,render_to_response,redirect
+from django.shortcuts import render,redirect
 
 #认证装饰器
 def CheckLogin(function):
@@ -140,19 +140,19 @@ class SysTem_MeMu(object):
                     {
                         'title': '项目管理',
                         'icon': 'am-icon-diamond',
-                        'url': '/project/index',
-                        # 'system_memu': [
-                        #     {
-                        #         'title': '所有项目',
-                        #         'icon': 'am-icon-angle-right',
-                        #         'url': '/project/index',
-                        #     },
-                        #     {
-                        #         'title': '管理项目',
-                        #         'icon': 'am-icon-angle-right',
-                        #         'url': '/user/index',
-                        #     },
-                        # ],
+                        # 'url': '/project/index',
+                        'system_memu': [
+                            {
+                                'title': '所有项目',
+                                'icon': 'am-icon-angle-right',
+                                'url': '/project/index',
+                            },
+                            {
+                                'title': '管理项目',
+                                'icon': 'am-icon-angle-right',
+                                'url': '/user/index',
+                            },
+                        ],
                     },
                     {
                         'title': '端口管理',
@@ -169,7 +169,7 @@ class SysTem_MeMu(object):
                                 'url': '/user/index',
                             },
                             {
-                                'title': '端口信息管理',
+                                'title': '端口信息aaaaaa管理',
                                 'icon': 'am-icon-angle-right',
                                 'url': '/user/index',
                             },
