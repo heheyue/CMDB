@@ -1,2 +1,2 @@
 *.pyc
-/CMDB/settings.py
+CMDB\settings.py
